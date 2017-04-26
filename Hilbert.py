@@ -10,7 +10,8 @@ dist = 20
 
 # 始点を揃える
 def begin(k):
-  print("begin({})".format(k))
+  if debug == 1:
+    print("begin({})".format(k))
 
   deg_a = heading() - k
   deg_b = 360 - abs(deg_a)
@@ -19,6 +20,11 @@ def begin(k):
     right( heading() - k )
   elif heading() < k:
     left( k - heading() )
+
+def line(rad):
+  begin(rad)
+  forward(dist)
+  return
 
 # 関数群
 def ldr(n):
@@ -31,18 +37,15 @@ def ldr(n):
   # handle
   dlu(n-1)
 
-  begin(180) 
-  forward(dist)
+  line(180)
 
   ldr(n-1)
 
-  begin(270)
-  forward(dist)
+  line(270)
 
   ldr(n-1)
 
-  begin(0)
-  forward(dist)
+  line(0)
 
   urd(n-1)
 
@@ -57,20 +60,17 @@ def urd(n):
   # handle
   rul(n-1)
 
-  begin(90)
-  forward(dist)
+  line(90)
   right(90)
 
   urd(n-1)
 
-  begin(0)
-  forward(dist)
+  line(0)
   right(90)
 
   urd(n-1)
 
-  begin(270)
-  forward(dist)
+  line(270)
 
   ldr(n-1)
 
@@ -85,20 +85,17 @@ def rul(n):
   # handle
   urd(n-1)
 
-  begin(0)
-  forward(dist)
+  line(0)
   left(90)
 
   rul(n-1)
   
-  begin(90)
-  forward(dist)
+  line(90)
   left(90)
 
   rul(n-1)
 
-  begin(180)
-  forward(dist)
+  line(180)
 
   dlu(n-1)
 
@@ -113,20 +110,17 @@ def dlu(n):
   # handle
   ldr(n-1)
 
-  begin(270)
-  forward(dist)
+  line(270)
   right(90)
 
   dlu(n-1)
 
-  begin(180)
-  forward(dist)
+  line(180)
   right(90)
 
   dlu(n-1)
 
-  begin(90)
-  forward(dist)
+  line(90)
 
   rul(n-1)
 
