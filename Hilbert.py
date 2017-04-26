@@ -71,6 +71,7 @@ def urd(n):
   urd(n-1)
 
   line(270)
+  #right(90)
 
   ldr(n-1)
 
@@ -96,6 +97,7 @@ def rul(n):
   rul(n-1)
 
   line(180)
+  #left(90)
 
   dlu(n-1)
 
@@ -121,6 +123,7 @@ def dlu(n):
   dlu(n-1)
 
   line(90)
+  #right(90)
 
   rul(n-1)
 
