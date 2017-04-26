@@ -21,6 +21,11 @@ def begin(k):
   elif heading() < k:
     left( k - heading() )
 
+# 線を引く(radはとり方が弧度法と同じ）
+# 0: Right
+# 90: Up
+# 180: Left
+# 270: Down
 def line(rad):
   begin(rad)
   forward(dist)
@@ -129,7 +134,7 @@ def dlu(n):
 
 ###############
 
-left(11)
+#left(11)
 begin(0)
 
 #ldr(3)
