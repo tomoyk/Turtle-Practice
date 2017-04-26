@@ -141,6 +141,7 @@ begin(0)
 penup()
 setposition(window_width()/2-dist,window_height()/2-dist)
 pendown()
+
 ldr(5)
 
 done()
