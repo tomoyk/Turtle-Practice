@@ -11,9 +11,12 @@ dist = 20
 # 始点を揃える
 def begin(k):
   print("begin({})".format(k))
-  
+
+  deg_a = heading() - k
+  deg_b = 360 - abs(deg_a)
+
   if heading() > k:
-    right( heading() -k )
+    right( heading() - k )
   elif heading() < k:
     left( k - heading() )
 
@@ -26,8 +29,6 @@ def ldr(n):
     print("- - - ldr({})".format(n))
 
   # handle
-  begin(180)
-
   dlu(n-1)
 
   begin(180) 
